@@ -1,0 +1,18 @@
+{
+  "name": "social-media-website",
+  "version": "0.0.0",
+  "description": "social media website",
+  "main": "app.js",
+  "author": "ankur",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "social"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
