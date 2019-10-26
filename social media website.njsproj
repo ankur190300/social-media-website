@@ -11,7 +11,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2742f6af-fec0-4aa5-b62e-2bfab5b683b9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>index.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -28,9 +28,45 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.js" />
+    <Content Include=".gitignore" />
+    <Content Include="controllers\home_controller.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="controllers\users_controller.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="index.js" />
+    <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="routes\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\users.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\home.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\layout.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\_header.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\_footer.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\profile.ejs">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
+    <Folder Include="controllers\" />
+    <Folder Include="models\" />
+    <Folder Include="routes\" />
+    <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
 </Project>

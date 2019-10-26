@@ -1,13 +1,30 @@
 const express = require("express");
 const app = express();
 const port = 8000;
+const expressLayouts = require("express-ejs-layouts");
 
+// includeing the layout variable for the backend layouts 
+//always remember to include it before using the router
+app.use(expressLayouts);
 //use express router
-app.use('/', require('./routes/index'));
 
+app.use(express.static("./assets"));
+
+// extract css and javascript files from the base files to the layout
+app.set("layout extractStyles", true);
+app.set("layout extractScripts", true);
+
+
+
+app.use('/', require('./routes'));
+
+
+//setting up the view engine
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+
 
 
 app.listen(port, function (err) {
