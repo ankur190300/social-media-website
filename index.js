@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 8000;
 const expressLayouts = require("express-ejs-layouts");
+const db = require("./config/mongoose");
 
 // includeing the layout variable for the backend layouts 
 //always remember to include it before using the router
