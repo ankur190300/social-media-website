@@ -4,15 +4,13 @@ const port = 8000;
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
 const cookieParser = require("cookie-parser");
-
-// includeing the layout variable for the backend layouts 
-//always remember to include it before using the router
-app.use(expressLayouts);
-//use express router
+const session = require("express-session");
+const passport = require("passport");
+const passportLocal = require("./config/passport-local-strategy");
 
 
-//adding the static files to the project
-app.use(express.static("./assets"));
+
+
 
 
 //reading the post request from the form 
@@ -21,14 +19,17 @@ app.use(express.urlencoded());
 //using the cookieparse as a middleware
 app.use(cookieParser());
 
+//adding the static files to the project
+app.use(express.static("./assets"));
+
+// includeing the layout variable for the backend layouts 
+//always remember to include it before using the router
+app.use(expressLayouts);
+
 
 // extract css and javascript files from the base files to the layout
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
-
-
-
-app.use('/', require('./routes'));
 
 
 //setting up the view engine
@@ -36,8 +37,24 @@ app.use('/', require('./routes'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+app.use(session({
+
+    name: 'social_media_website',
+    secret:'ihavetobefaster',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    }
 
 
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//use express router
+app.use('/', require('./routes'));
 
 app.listen(port, function (err) {
 

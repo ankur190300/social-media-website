@@ -35,6 +35,9 @@
     <Content Include="assets\css\user_profile.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="config\passport-local-strategy.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="config\mongoose.js">
       <SubType>Code</SubType>
     </Content>
@@ -63,6 +66,10 @@
     <Content Include="views\layout.ejs">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="views\user_sign_in.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\user_sign_up.ejs" />
     <Content Include="views\_header.ejs">
       <SubType>Code</SubType>
     </Content>
