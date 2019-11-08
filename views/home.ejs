@@ -2,3 +2,34 @@
 
 
     <h1> codiel /<%= title %></h1>
+<section id ="post">
+  <h4>posts</h4>
+  <% if (locals.user){%>
+  <form action="/posts/create" id="new-post-form" method="POST">
+    <textarea name="content" cols="30" rows ="3">
+      
+    </textarea>
+    <input type="submit" value="post">
+      
+    </input>  
+  </form>
+    <% } %>
+  <ul id =" home_posts">
+    
+    <% for (post of posts) { %>
+      
+      <li>
+        <h4>
+          <%if( post.user){ %>
+            <%= post.user.name %>
+              <% } %>
+        </h4>
+        <br>
+        <%= post.content %>
+          
+      </li>
+      
+     <% } %>
+  </ul>
+    
+</section>

@@ -35,6 +35,8 @@
     <Content Include="assets\css\user_profile.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="assets\scss\layout.scss" />
+    <Content Include="assets\scss\user_profile.scss" />
     <Content Include="config\passport-local-strategy.js">
       <SubType>Code</SubType>
     </Content>
@@ -44,10 +46,16 @@
     <Content Include="controllers\home_controller.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="controllers\posts_controller.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="controllers\users_controller.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="index.js" />
+    <Content Include="models\posts.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="models\JavaScript1.js">
       <SubType>Code</SubType>
     </Content>
@@ -55,6 +63,9 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="routes\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\posts.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="routes\users.js">
@@ -85,6 +96,7 @@
     <Folder Include="assets\css\" />
     <Folder Include="assets\images\" />
     <Folder Include="assets\js\" />
+    <Folder Include="assets\scss\" />
     <Folder Include="config\" />
     <Folder Include="controllers\" />
     <Folder Include="models\" />
