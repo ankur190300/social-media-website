@@ -46,6 +46,9 @@
     <Content Include="controllers\home_controller.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="controllers\comments_controller.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="controllers\posts_controller.js">
       <SubType>Code</SubType>
     </Content>
@@ -53,6 +56,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="index.js" />
+    <Content Include="models\comment.js" />
     <Content Include="models\posts.js">
       <SubType>Code</SubType>
     </Content>
@@ -62,6 +66,9 @@
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="routes\comments.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="routes\index.js">
       <SubType>Code</SubType>
     </Content>

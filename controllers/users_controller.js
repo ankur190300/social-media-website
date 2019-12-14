@@ -4,8 +4,37 @@ const User = require('../models/JavaScript1');
 // render the user profile page 
 module.exports.profile = function (req, res) {
 
-    return res.render('profile', { title: 'profile' });
+    User.findById(req.params.id, function (err, user) {
+        return res.render('profile',
+            {
+                title: 'profile',
+                profile_user:user
+            });
+
+    })
+
+   
 };
+
+module.exports.update = function (req, res) {
+
+    if (req.params.id == req.user.id) {
+
+        User.findByIdAndUpdate(req.params.id, { name: req.body.name, email:req.body.email }, function (err, user) {
+
+            res.redirect('back');
+
+
+        })
+
+
+    }
+    else {
+
+        res.status(401).send('Unauthorized');
+    }
+}
+
 
 //render the sign in page 
 module.exports.signin = function (req, res) {
@@ -18,7 +47,7 @@ module.exports.signin = function (req, res) {
         title: "user sign-in"
     });
 };
-
+ 
 //render the sign up page 
 module.exports.signup = function (req, res) {
 
@@ -63,12 +92,14 @@ module.exports.create = function (req, res) {
 };
 
 module.exports.createSession = function (req, res) {
+    req.flash('success', 'Logged in successfully');
+
     return res.redirect('/');
 };
 
 module.exports.destroySession = function (req, res) {
 
     req.logout();
-
+    req.flash('success', 'You have logged out');
     return res.redirect('/');
 }

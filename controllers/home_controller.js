@@ -1,9 +1,9 @@
 ﻿const Post = require('../models/posts');
+const User = require('../models/JavaScript1')
 
 
-
-module.exports.home = function (req, res) {
-   // console.log(req.cookies);
+module.exports.home = async function (req, res) {
+    // console.log(req.cookies);
     // res.cookie('user_id', 25);
 
     //returning all the posts to print on the home page
@@ -21,16 +21,26 @@ module.exports.home = function (req, res) {
 
 
     //populating the post
-    Post.find({}).populate('user').exec(function (err, post) {
+    try {
+        let posts = await Post.find({},)
+            .populate('user')
+            .populate({
+                path: 'comments',
+                populate: {
+                    path: 'user'
+                }
+            })
 
-        if (err) {
-            console.log('not able to show posts from the postsdb');
-            return;
 
-        }
-        else {
-            return res.render('home', { title: 'home', posts: post });
-        }
-    });
-   
-};
+        let users =await User.find({},);
+
+        return res.render('home', {
+            title: "Codeial | Home",
+            posts: posts,
+            all_users: users
+        });
+    }
+    catch (err) {
+        console.log("error ", err);
+    }
+}
