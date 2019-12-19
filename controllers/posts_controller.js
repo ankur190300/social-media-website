@@ -31,7 +31,8 @@ module.exports.create =  async function (req, res) {
         
 
     } catch(err){
-        req.flash('error',err)
+        req.flash('error', err);
+        
         return res.redirect('back');
     }
 };
@@ -44,12 +45,11 @@ module.exports.delete = async function (req, res) {
 
         //id instead of _id because id returns string
         if (p.user == req.user.id) {
+
             p.remove();
+            await Comment.deleteMany({ post: req.params.id })
             
             if (req.xhr) {
-
-                //pos = await p.populate('user', 'name').execPopulate();
-                console.log('yayayayayay');
 
                 return res.status(200).json({
                     data: {
@@ -61,7 +61,7 @@ module.exports.delete = async function (req, res) {
 
 
             req.flash('success', 'The post and the associated comments deleted');
-            await Comment.deleteMany({ post: req.params.id })
+            
         }
         else {
             req.flash('error', 'You are unauthorized to delete this post')

@@ -29,12 +29,17 @@ app.use(express.urlencoded());
 //using the cookieparse as a middleware
 app.use(cookieParser());
 
+
 //adding the static files to the project
 app.use(express.static("./assets"));
+
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 
 // includeing the layout variable for the backend layouts 
 //always remember to include it before using the router
 app.use(expressLayouts);
+
 
 
 // extract css and javascript files from the base files to the layout

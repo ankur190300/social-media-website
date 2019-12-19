@@ -35,8 +35,15 @@
     <Content Include="assets\css\user_profile.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="assets\js\home_posts.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="assets\scss\home.scss" />
     <Content Include="assets\scss\layout.scss" />
     <Content Include="assets\scss\user_profile.scss" />
+    <Content Include="config\middleware.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="config\passport-local-strategy.js">
       <SubType>Code</SubType>
     </Content>
@@ -88,6 +95,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\user_sign_up.ejs" />
+    <Content Include="views\_comments.ejs" />
     <Content Include="views\_header.ejs">
       <SubType>Code</SubType>
     </Content>
@@ -97,6 +105,7 @@
     <Content Include="views\profile.ejs">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="views\_post.ejs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
@@ -107,7 +116,10 @@
     <Folder Include="config\" />
     <Folder Include="controllers\" />
     <Folder Include="models\" />
+    <Folder Include="uploads\" />
     <Folder Include="routes\" />
+    <Folder Include="uploads\users\" />
+    <Folder Include="uploads\users\avatars\" />
     <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
