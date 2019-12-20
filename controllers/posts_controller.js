@@ -61,20 +61,21 @@ module.exports.delete = async function (req, res) {
 
 
             req.flash('success', 'The post and the associated comments deleted');
-            
+            return res.redirect('back'); 
         }
         else {
-            req.flash('error', 'You are unauthorized to delete this post')
+            req.flash('error', 'You are unauthorized to delete this post');
+            return res.redirect('back');
         }
 
-        res.redirect('back');
+        
 
 
 
     }
     catch(err){
         req.flash('error', err);
-        return res.redirect('back')
+        return res.redirect('back')  
 
     }
 
