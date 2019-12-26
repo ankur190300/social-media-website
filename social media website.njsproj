@@ -44,6 +44,8 @@
     <Content Include="config\middleware.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="config\nodemailer.js" />
+    <Content Include="config\passport-jwt-strategy.js" />
     <Content Include="config\passport-local-strategy.js">
       <SubType>Code</SubType>
     </Content>
@@ -63,6 +65,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="index.js" />
+    <Content Include="mailers\comments_mailers.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="models\comment.js" />
     <Content Include="models\posts.js">
       <SubType>Code</SubType>
@@ -91,6 +96,9 @@
     <Content Include="views\layout.ejs">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="views\mailers\comments\new_comment.ejs">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\user_sign_in.ejs">
       <SubType>Code</SubType>
     </Content>
@@ -116,11 +124,14 @@
     <Folder Include="config\" />
     <Folder Include="controllers\" />
     <Folder Include="models\" />
+    <Folder Include="mailers\" />
     <Folder Include="uploads\" />
     <Folder Include="routes\" />
     <Folder Include="uploads\users\" />
     <Folder Include="uploads\users\avatars\" />
     <Folder Include="views\" />
+    <Folder Include="views\mailers\" />
+    <Folder Include="views\mailers\comments\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
 </Project>
