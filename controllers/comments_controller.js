@@ -1,5 +1,6 @@
 ﻿const Comment = require('../models/comment');
 const Post = require('../models/posts');
+const comment_mailer = require('../mailers/comments_mailers');
 
 module.exports.create = async function (req, res) {
     console.log("inside comments creating section");
@@ -19,6 +20,8 @@ module.exports.create = async function (req, res) {
             post.comments.push(comm);
             post.save();
 
+            comm = await comm.populate('user', 'name email').execPopulate();
+            comment_mailer.newcomment(comm);
             req.flash('success', 'Comment created successfully');
 
             return res.redirect('/');
@@ -30,6 +33,7 @@ module.exports.create = async function (req, res) {
     } catch(err){
 
         req.flash('error', err);
+        console.log(err);
         return res.redirect('back');
     }
     

@@ -30,11 +30,11 @@
 
     // method to create a post in DOM
     let newPostDom = function (post) {
-        return $(` <li id="post-${post._id}">
+        return $(` <li id="post-${ post._id}">
                       <p>
                            
                            <small>
-                             <a class = "delete-post button" href ="/posts/delete/${post._id}"> X </a>
+                             <a class = "delete-post button" href ="/posts/delete/${ post._id}"> X </a>
                            </small>
                            
             
