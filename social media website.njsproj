@@ -38,9 +38,15 @@
     <Content Include="assets\js\home_posts.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="assets\js\toggle_likes.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="assets\scss\home.scss" />
     <Content Include="assets\scss\layout.scss" />
     <Content Include="assets\scss\user_profile.scss" />
+    <Content Include="config\kue.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="config\middleware.js">
       <SubType>Code</SubType>
     </Content>
@@ -58,6 +64,9 @@
     <Content Include="controllers\comments_controller.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="controllers\likes_controller.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="controllers\posts_controller.js">
       <SubType>Code</SubType>
     </Content>
@@ -69,6 +78,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="models\comment.js" />
+    <Content Include="models\like.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="models\posts.js">
       <SubType>Code</SubType>
     </Content>
@@ -82,6 +94,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="routes\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\likes.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="routes\posts.js">
@@ -114,6 +129,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\_post.ejs" />
+    <Content Include="workers\comment_email_workers.js">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
@@ -125,6 +143,7 @@
     <Folder Include="controllers\" />
     <Folder Include="models\" />
     <Folder Include="mailers\" />
+    <Folder Include="workers\" />
     <Folder Include="uploads\" />
     <Folder Include="routes\" />
     <Folder Include="uploads\users\" />

@@ -1,7 +1,7 @@
 ﻿const Post = require('../models/posts');
 //const passport = require('')
 const Comment = require('../models/comment');
-
+const Like = require('../models/like');
 module.exports.create =  async function (req, res) {
 
     try {
@@ -46,6 +46,10 @@ module.exports.delete = async function (req, res) {
         //id instead of _id because id returns string
         if (p.user == req.user.id) {
 
+
+            await Like.deleteMany({ likeable: post, onModel: 'Post' });
+            await Like.deleteMany({ _id: { $in: post.comments } });
+
             p.remove();
             await Comment.deleteMany({ post: req.params.id })
             
@@ -75,6 +79,7 @@ module.exports.delete = async function (req, res) {
     }
     catch(err){
         req.flash('error', err);
+        console.log('#######', err);
         return res.redirect('back')  
 
     }

@@ -13,7 +13,7 @@
                 success: function (data) {
                    
                     let newPost = newPostDom(data.data.post);
-                    $('#posts-list-container>ul').prepend(newPost);
+                    $('#posts-list-container > ul').prepend(newPost);
                     console.log($('.delete-post button', newPost).prop('href'))
                     deletePost($(' .delete-post button', newPost));
                 },
@@ -48,6 +48,14 @@
                                ${ post.user.name }
 
                             </small>
+                            <small>
+                            
+                            <a class="toggle-like-button" data-likes="0"  href="/likes/toggle/?id=<%=post._id%>&type=Post">
+                                0 Likes
+                            </a>
+                     
+                            </small>
+                            
                        </p>
                               <div class="post-comments">
                 

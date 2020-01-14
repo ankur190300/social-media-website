@@ -57,7 +57,11 @@ module.exports.delete = async function (req, res) {
 
             let postid = comment.post;
             comment.remove();
+
+
             await Post.findByIdAndUpdate(postid, { $pull: { comments: req.params.id } });
+            await Like.deleteMany({ likeable: comment._id, onModel: 'Comment' });
+
             req.flash('success', 'Comment deleted!')
             res.redirect('back');
            
