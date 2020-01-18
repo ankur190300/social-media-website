@@ -1,5 +1,5 @@
 ﻿<link rel ="stylesheet" href="/css/home.css">
-  
+<link rel="stylesheet" href="/css/chat_box.css">
   
   <div id="home-container">
     <section id ="feed-post">
@@ -28,16 +28,17 @@
     <section id ="User-friends">
 
       <h3>Friends</h3>
-      <% for( user of all_users){ %>
+      <% for( u of all_users){ %>
 
       <p>
-        <a href ="/users/profile/<%= user.id%>">
-          <%= user.name %>
+        <a href ="/users/profile/<%= u.id%>">
+          <%= u.name %>
         </a>
 
       </p>
       <% } %>
     </section>
+    <%- include('_chat_box') -%>
   </div>
  
   <script src="/js/home_posts.js"></script>
@@ -50,3 +51,13 @@
     let toggleLike = new ToggleLike(self);
     });
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="/js/chat_engine.js"></script>
+ 
+  <% if (locals.user){ %>
+  <script>
+    
+    new ChatEngine('user-chat-box', '<%= locals.user.email%>');
+    
+  </script>
+  <% } %>

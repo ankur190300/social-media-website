@@ -35,15 +35,22 @@
     <Content Include="assets\css\user_profile.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="assets\js\chat_engine.js" />
     <Content Include="assets\js\home_posts.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="assets\js\home_post_comments.js" />
     <Content Include="assets\js\toggle_likes.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="assets\scss\chat_box.scss" />
     <Content Include="assets\scss\home.scss" />
     <Content Include="assets\scss\layout.scss" />
     <Content Include="assets\scss\user_profile.scss" />
+    <Content Include="config\chat_sockets.js" />
+    <Content Include="config\environment.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="config\kue.js">
       <SubType>Code</SubType>
     </Content>
@@ -58,6 +65,8 @@
     <Content Include="config\mongoose.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="controllers\api\v1\posts_api.js" />
+    <Content Include="controllers\api\v1\users_api.js" />
     <Content Include="controllers\home_controller.js">
       <SubType>Code</SubType>
     </Content>
@@ -118,6 +127,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\user_sign_up.ejs" />
+    <Content Include="views\_chat_box.ejs" />
     <Content Include="views\_comments.ejs" />
     <Content Include="views\_header.ejs">
       <SubType>Code</SubType>
@@ -141,6 +151,8 @@
     <Folder Include="assets\scss\" />
     <Folder Include="config\" />
     <Folder Include="controllers\" />
+    <Folder Include="controllers\api\" />
+    <Folder Include="controllers\api\v1\" />
     <Folder Include="models\" />
     <Folder Include="mailers\" />
     <Folder Include="workers\" />

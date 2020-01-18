@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 8001;
+const port = 8000;
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
 const cookieParser = require("cookie-parser");
@@ -11,13 +11,19 @@ const passportJWT = require("./config/passport-jwt-strategy");
 const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
-const customWare= require("./config/middleware")
-  
+const customWare = require("./config/middleware")
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_sockets.js').chatSockets(chatServer);
+const env = require('./config/environment');
+const path = require('path');
+
+chatServer.listen(5000);
+console.log("Chat server is running on port 5000");
 
 
 app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
+    src: path.join(__dirname, env.asset_path, '/scss'),
+    dest: path.join(__dirname, env.asset_path, '/css'),
     debug: true,
     outputStyle: 'extended',
     prefix: '/css'
@@ -58,7 +64,7 @@ app.set('views', './views');
 app.use(session({
 
     name: 'social_media_website',
-    secret:'ihavetobefaster',
+    secret: env.session_cookie_secret,
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -80,10 +86,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use(passport.setAuthenticatedUser);
+
 
 app.use(flash());
 app.use(customWare.setflash);
+
+app.use(passport.setAuthenticatedUser);
+
+
 //use express router
 app.use('/', require('./routes'));
 

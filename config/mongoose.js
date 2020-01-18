@@ -1,6 +1,7 @@
 ﻿const mongoose = require('mongoose');
+const env = require('./environment');
 
-mongoose.connect("mongodb://localhost/media_website");
+mongoose.connect(`mongodb://localhost/${env.db}`);
 
 const db = mongoose.connection;
 
