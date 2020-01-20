@@ -65,6 +65,9 @@
     <Content Include="config\mongoose.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="config\view-helper.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="controllers\api\v1\posts_api.js" />
     <Content Include="controllers\api\v1\users_api.js" />
     <Content Include="controllers\home_controller.js">
@@ -80,6 +83,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="controllers\users_controller.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="gulpfile.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="index.js" />
@@ -98,6 +104,16 @@
     </Content>
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="public\assets\css\chat_box-3aa9f1fb21.css" />
+    <Content Include="public\assets\css\home-de60b40ae2.css" />
+    <Content Include="public\assets\css\layout-ea5902e640.css" />
+    <Content Include="public\assets\css\user_profile-29c6bc0665.css" />
+    <Content Include="public\assets\js\chat_engine-21be63d13f.js" />
+    <Content Include="public\assets\js\home_posts-5d2287dba4.js" />
+    <Content Include="public\assets\js\home_post_comments-17d4d4c772.js" />
+    <Content Include="public\assets\js\toggle_likes-0e3d81481c.js" />
+    <Content Include="public\assets\rev-manifest.json" />
+    <Content Include="public\rev-manifest.json" />
     <Content Include="README.md" />
     <Content Include="routes\comments.js">
       <SubType>Code</SubType>
@@ -155,6 +171,11 @@
     <Folder Include="controllers\api\v1\" />
     <Folder Include="models\" />
     <Folder Include="mailers\" />
+    <Folder Include="public\" />
+    <Folder Include="public\assets\" />
+    <Folder Include="public\assets\css\" />
+    <Folder Include="public\assets\js\" />
+    <Folder Include="public\assets\images\" />
     <Folder Include="workers\" />
     <Folder Include="uploads\" />
     <Folder Include="routes\" />
